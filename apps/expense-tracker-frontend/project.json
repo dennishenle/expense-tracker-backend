@@ -7,9 +7,7 @@
   "targets": {
     "build": {
       "executor": "@nx/next:build",
-      "outputs": [
-        "{workspaceRoot}/dist/apps/expense-tracker-frontend"
-      ],
+      "outputs": ["{workspaceRoot}/dist/apps/expense-tracker-frontend"],
       "options": {
         "root": "apps/expense-tracker-frontend",
         "outputPath": "dist/apps/expense-tracker-frontend",
@@ -28,7 +26,7 @@
       "defaultConfiguration": "development",
       "options": {
         "root": "apps/expense-tracker-frontend",
-        "port": 3000,
+        "port": 13000,
         "buildTarget": "expense-tracker-frontend:build"
       },
       "configurations": {
@@ -42,7 +40,7 @@
       "defaultConfiguration": "production",
       "options": {
         "root": "apps/expense-tracker-frontend",
-        "port": 3000,
+        "port": 13000,
         "buildTarget": "expense-tracker-frontend:build:production"
       },
       "configurations": {

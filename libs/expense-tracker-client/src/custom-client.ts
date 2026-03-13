@@ -1,8 +1,8 @@
 import Axios from 'axios';
-import {useAuth} from "./auth.context";
+import { useAuth } from './auth.context';
 
 export const AXIOS_INSTANCE = Axios.create({
-  baseURL: process.env['NEXT_PUBLIC_API_URL'] || 'http://localhost:3000'
+  baseURL: process.env['NEXT_PUBLIC_API_URL'] || 'http://localhost:13000',
 });
 
 type CustomClient<T> = (data: {
@@ -32,7 +32,6 @@ export const useCustomClient = <T>(): CustomClient<T> => {
     });
     return responseData;
   };
-
 };
 
 export default useCustomClient;

@@ -3,6 +3,6 @@ issuer_url = "https://nas.cielcat.ch/realms/dev"
 audience = "expense-tracker-local-dev"
 
 [expense_tracker]
-port = 3001
+port = 13001
 db_connection_string = "postgres://admin:localpassword@localhost/postgres"
-cors_url="http://localhost:3000"
+cors_url="http://localhost:13000"

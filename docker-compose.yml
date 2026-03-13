@@ -33,19 +33,19 @@ services:
       KC_DB_URL: jdbc:postgresql://db-keycloak/keycloak
       KC_BOOTSTRAP_ADMIN_USERNAME: admin
       KC_BOOTSTRAP_ADMIN_PASSWORD: admin
-      KC_HOSTNAME: 127.0.0.1
-      KC_HOSTNAME_STRICT: "false"
-      KC_HTTP_ENABLED: "true"
-      KC_HEALTH_ENABLED: "true"
+      KC_HOSTNAME: 127.0.0.1:18080
+      KC_HOSTNAME_STRICT: 'false'
+      KC_HTTP_ENABLED: 'true'
+      KC_HEALTH_ENABLED: 'true'
     command:
       - start-dev
       - --import-realm
     volumes:
       - ./keycloak-realm.json:/opt/keycloak/data/import/realm.json:ro
     ports:
-      - 8080:8080
-      - 3001:3001
-      - 3000:3000
+      - 18080:8080
+      - 13001:3001
+      - 13000:3000
     depends_on:
       - db-keycloak
 
@@ -54,10 +54,10 @@ services:
       context: .
       dockerfile: apps/expense_tracker/Dockerfile
     restart: unless-stopped
-    network_mode: "service:keycloak"
+    network_mode: 'service:keycloak'
     environment:
       RUST_LOG: info
-      EXPENSE_TRACKER_IGNORE_TLS: "1"
+      EXPENSE_TRACKER_IGNORE_TLS: '1'
     volumes:
       - ./config/settings_compose.toml:/app/config/settings.toml:ro
     depends_on:
@@ -71,7 +71,7 @@ services:
       args:
         NODE_ENV: development
     restart: unless-stopped
-    network_mode: "service:keycloak"
+    network_mode: 'service:keycloak'
     env_file:
       - apps/expense-tracker-frontend/.env.compose
     depends_on:

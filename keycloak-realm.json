@@ -8,19 +8,14 @@
       "protocol": "openid-connect",
       "publicClient": false,
       "secret": "kPEFrXZAe8QiFKG8bRvgWHcPisaXGdyH",
-      "redirectUris": [
-        "http://127.0.0.1:3000/api/auth/callback/keycloak"
-      ],
-      "webOrigins": [
-        "http://localhost:3000",
-        "http://127.0.0.1:3000"
-      ],
+      "redirectUris": ["http://127.0.0.1:13000/api/auth/callback/keycloak"],
+      "webOrigins": ["http://localhost:13000", "http://127.0.0.1:13000"],
       "standardFlowEnabled": true,
       "directAccessGrantsEnabled": true,
       "serviceAccountsEnabled": true,
       "authorizationServicesEnabled": true,
       "attributes": {
-        "post.logout.redirect.uris": "http://127.0.0.1:3000/*"
+        "post.logout.redirect.uris": "http://127.0.0.1:13000/*"
       },
       "protocolMappers": [
         {
@@ -52,9 +47,7 @@
           "temporary": false
         }
       ],
-      "realmRoles": [
-        "user"
-      ]
+      "realmRoles": ["user"]
     }
   ],
   "roles": {
